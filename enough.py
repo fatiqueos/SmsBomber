@@ -1,4 +1,25 @@
-import subprocess, sys, os
+import subprocess, sys, os, requests, time
+
+def check_and_update_code():
+    github_url = "https://raw.githubusercontent.com/fatiqueos/distornollo-enough/main/enough.py"
+    local_file = __file__
+
+    try:
+        response = requests.get(github_url)
+        response.raise_for_status()
+        github_code = response.text
+    except requests.RequestException as e:
+        print(f"Güncelleme kontrolü başarısız: {e}")
+        return
+
+    with open(local_file, "r") as file:
+        local_code = file.read()
+
+    if github_code != local_code:
+        with open(local_file, "w") as file:
+            file.write(github_code)
+        print("Kod güncellendi, program yeniden başlatılıyor...")
+        os.execv(sys.executable, ['python'] + sys.argv)
 
 try:
     import requests, urllib3, uuid
