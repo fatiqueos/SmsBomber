@@ -284,17 +284,13 @@ def send(number, amount, worker_amount):
     restart()
 
 def watermark():
-    print("""
-       ___      __             __           __
-  ____/ (_)____/ /_____  _____/ /____  ____/ /
- / __  / / ___/ __/ __ \/ ___/ __/ _ \/ __  / 
-/ /_/ / (__  ) /_/ /_/ / /  / /_/  __/ /_/ /  
-\__,_/_/____/\__/\____/_/   \__/\___/\__,_/   
+    print("""     ___     __                     ____   
+ ___/ (_)__ / /____  _______  ___  / / /__ 
+/ _  / (_-</ __/ _ \/ __/ _ \/ _ \/ / / _ \\
+\_,_/_/___/\__/\___/_/ /_//_/\___/_/_/\___/
 """)
     print("-" * 50)
-    print("Telegram : t.me/fatiqueos")
-    print("Discord : fatiqueos")
-    print("GitHub : fatiqueos")
+    print("Telegram : t.me/distornollo")
     print("-" * 50)
 
 def get_number():
